@@ -16,6 +16,8 @@ export class ActorComponent implements OnInit {
   movies: MovieModel = new MovieModel();
   externalIds: Object = {};
 
+
+
   constructor(
     private _moviesSerice: MoviesService,
     private router: ActivatedRoute
@@ -36,6 +38,11 @@ export class ActorComponent implements OnInit {
       this._moviesSerice.getPersonExternalData(id).subscribe(res => {
         this.externalIds = res;
       }, error => console.log(error));
+
+      this._moviesSerice.getImagePeople(id).subscribe(res => {
+          this.externalIds = res;
+      }, error => console.log(error));
+
     });
   }
 

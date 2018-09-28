@@ -13,9 +13,12 @@
               <button mat-mini-fab matTooltip="Soon" aria-label="Add Favorite Movie"><mat-icon>favorite</mat-icon></button>
               <button mat-mini-fab matTooltip="Soon" aria-label="Add Star Movie"><mat-icon>star</mat-icon></button>
               <button mat-mini-fab matTooltip="Soon" aria-label="Add Bookmark Movie"><mat-icon>bookmark</mat-icon></button>
-              <a href="javascript:void(0)" (click)="openDialog()" *ngIf="video"><mat-icon>play_arrow</mat-icon> Play Trailer</a>
+              <button mat-mini-fab><a (click)="openDialog()" *ngIf="video"><mat-icon>play_arrow</mat-icon></a></button>
+              <button mat-mini-fab><a (click)="openDialog()" *ngIf="video"><mat-icon>play_arrow</mat-icon></a></button>
+              <button mat-mini-fab><a (click)="openDialog()" *ngIf="videostream"><mat-icon>play_arrow</mat-icon></a></button>
+
             </div>
-            <h3 class="parallax-subtitle">Overview</h3>
+            <h3 class="parallax-subtitle">Description</h3>
             <p>{{movie.overview}}</p>
             <h3 class="parallax-subtitle">Categories</h3>
             <a *ngFor="let genre of movie.genres" routerLink="/genres/{{genre.id}}/{{genre.name}}">
@@ -30,7 +33,7 @@
   <div class="container">
 
     <div *ngIf="cast">
-      <h1 class="center">Top Billed Cast</h1>
+      <h1 class="center">Casting</h1>
       <mat-card-content class="card-content">
         <mat-card class="cast-actor-card" *ngFor="let actor of cast">
           <a routerLink="/actor/{{actor?.id}}">
@@ -45,7 +48,7 @@
     </div>
 
     <div *ngIf="similarMovies" class="similar-movies">
-      <h1>Recommended Movies</h1>
+      <h1>Films similaire</h1>
       <div style="text-align:center;">
         <span *ngFor="let movie of similarMovies;">
           <app-poster-card [model]="movie" class="recommended-poster"></app-poster-card>
@@ -59,6 +62,6 @@
 </div>
 <div *ngIf="isLoading" style="margin-top: 30%">
   <div class="loading">
-    <h4>Loading</h4>
+    <h4>Chargement</h4>
   </div>
 </div>

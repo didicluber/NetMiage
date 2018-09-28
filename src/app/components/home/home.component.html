@@ -1,6 +1,6 @@
 <section id="home-header">
   <div style="padding-top: 15%">
-    Welcome
+  Bienvenue
   </div>
 </section>
 
@@ -8,14 +8,14 @@
 
   <section>
     <header class="moviesHome-header">
-      <div class="moviesHome-title">In Theater</div>
-      <a routerLink="/all-movies" style="color: white">See all Movies</a>
+      <div class="moviesHome-title">Au Cinema</div>
+      <a routerLink="/all-movies" style="color: white">Voir tout les films</a>
     </header>
 
     <mat-tab-group (selectedTabChange)="changeTab()">
 
       <!--Now Playing Movies-->
-      <mat-tab label="Now Playing Movies">
+      <mat-tab label="Films joués actuellement">
         <div class="swiper-container" [swiper]="config">
           <div class="swiper-wrapper">
             <div *ngFor="let movie of nowPlaying | slice:0:10" class="swiper-slide">
@@ -27,7 +27,7 @@
       </mat-tab>
 
       <!--Upcoming Movies Tab-->
-      <mat-tab label="Upcomming Movies">
+      <mat-tab label="Bientot à l'affiche">
         <div class="swiper-container" [swiper]="config">
           <div class="swiper-wrapper">
             <div *ngFor="let movie of upcomingList | slice:0:10" class="swiper-slide">
@@ -39,7 +39,7 @@
       </mat-tab>
 
       <!--Popular Movies Tab-->
-      <mat-tab label="Popular Movies">
+      <mat-tab label="Film populaire">
         <div class="swiper-container" [swiper]="config">
           <div class="swiper-wrapper">
             <div *ngFor="let movie of popularList | slice:0:10" class="swiper-slide">
@@ -57,14 +57,14 @@
 
   <section>
     <header class="moviesHome-header">
-      <div class="moviesHome-title">On TV</div>
-      <a routerLink="/all-tv-shows" style="color: white">See all TV Shows</a>
+      <div class="moviesHome-title">A la TV</div>
+      <a routerLink="/all-tv-shows" style="color: white">Voir toute les series TV</a>
     </header>
 
     <mat-tab-group (selectedTabChange)="changeTab()">
 
       <!--Currently Airing TV Shows Tab-->
-      <mat-tab label="Currently Airing TV Shows">
+      <mat-tab label="Émissions de télévision actuellement diffusées">
         <div class="swiper-container" [swiper]="config">
           <div class="swiper-wrapper">
             <div *ngFor="let tvShow of onTheAir | slice:0:10" class="swiper-slide">
@@ -76,7 +76,7 @@
       </mat-tab>
 
       <!--Airing Today TV Shows Tab-->
-      <mat-tab label="Airing Today TV Shows">
+      <mat-tab label="Diffuser des émissions de télévision aujourd'hui">
         <div class="swiper-container" [swiper]="config">
           <div class="swiper-wrapper">
             <div *ngFor="let tvShow of airingToday | slice:0:10" class="swiper-slide">
@@ -88,7 +88,7 @@
       </mat-tab>
 
       <!--Popular TV Shows Tab-->
-      <mat-tab label="Popular TV Shows">
+      <mat-tab label="Émissions de télévision populaires">
         <div class="swiper-container" [swiper]="config">
           <div class="swiper-wrapper">
             <div *ngFor="let tvShow of popularTvShows | slice:0:10" class="swiper-slide">
@@ -101,5 +101,4 @@
 
     </mat-tab-group>
   </section>
-
 </div>

@@ -7,6 +7,7 @@ export class Actors {
   public deathday: string;
   public gender: number;
   public homepage: string;
+  public image: string;
   public id: number;
   public imdb_id: string;
   public name: string;

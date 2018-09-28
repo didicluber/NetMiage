@@ -12,9 +12,9 @@ export class OnTVService {
 
   constructor(private http: HttpClient) {
     this.baseUrl = 'https://api.themoviedb.org/3/';
-    this.apiKey = '';
-    this.language = 'en-US';
-    this.region = 'US'
+    this.apiKey = '4ea77330dd1c2e2d4a09796168296fa4';
+    this.language = 'fr-FR';
+    this.region = 'FR'
   }
 
   getTvOnTheAir(page: number): Observable<any> {
@@ -38,7 +38,7 @@ export class OnTVService {
   }
 
   getTVShowByGenre(id: string): Observable<any> {
-    return this.http.get(`${this.baseUrl}genre/${id}/tv?api_key=${this.apiKey}`)
+    return this.http.get(`${this.baseUrl}genre/${id}/tv?api_key=${this.apiKey}&language=${this.language}`)
   }
 
 }

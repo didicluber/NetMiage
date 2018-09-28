@@ -3,15 +3,15 @@
     <mat-card class="actor-card">
       <img src="https://image.tmdb.org/t/p/w300/{{person.profile_path}}" *ngIf="person.profile_path">
       <mat-card-content>
-        <h2>Personal Info</h2>
+        <h2>Informations personnelles</h2>
         <p>
-          <strong>Gender: </strong>
-          <span *ngIf="person.gender == 2">Male</span>
-          <span *ngIf="person.gender == 1">Female</span>
+          <strong>Genre: </strong>
+          <span *ngIf="person.gender == 2">Homme</span>
+          <span *ngIf="person.gender == 1">Femme</span>
         </p>
-        <p><strong>Birthday: </strong>
+        <p><strong>Anniversaire: </strong>
           {{person.birthday}}</p>
-        <p><strong>Place of Birth: </strong>{{person.place_of_birth}}</p>
+        <p><strong>Lieu de naissance: </strong>{{person.place_of_birth}}</p>
       </mat-card-content>
     </mat-card>
   </div>
@@ -29,7 +29,7 @@
         </span>
         </div>
         <div>
-          <h3 style="text-align: left">Biography</h3>
+          <h3 style="text-align: left">Biographie</h3>
           <div class="biography">
             <p style="text-align: justify;">{{person.biography}}</p>
           </div>
@@ -41,16 +41,14 @@
       <mat-card-content>
         <mat-tab-group>
           <mat-tab [label]="'Movies'">
-            Soon
+            Bientot
           </mat-tab>
           <mat-tab [label]="'Images'">
-            Soon
-            <!--<mat-card>-->
-              <!--<img mat-card-image src="http://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">-->
-            <!--</mat-card>-->
+            <mat-card>
+            </mat-card>
           </mat-tab>
           <mat-tab [label]="'Extra Info'">
-            Soon
+            Bientot
           </mat-tab>
         </mat-tab-group>
       </mat-card-content>

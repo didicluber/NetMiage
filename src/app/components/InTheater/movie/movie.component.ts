@@ -5,6 +5,7 @@ import { MoviesService } from '../../../services/inTheater/movies.service';
 import {MovieModel} from '../../../models/movie.model';
 import {MovieCast} from '../../../models/movie-cast';
 import {MovieVideo} from '../../../models/movie-video';
+import {MovieStream} from '../../../models/movie-stream';
 import {MAT_DIALOG_DATA, MatDialog, MatDialogRef} from '@angular/material';
 import {PaginatorModel} from '../../../models/paginator.model';
 import {SeoService} from '../../../services/seo.service';
@@ -20,6 +21,7 @@ export class MovieComponent implements OnInit {
   similarMovies: Array<PaginatorModel> = [];
   cast: MovieCast;
   video: MovieVideo;
+  videostream: MovieStream;
   isLoading = true;
 
   @ViewChild('closeModal') public  closeModal: ElementRef;
@@ -66,6 +68,14 @@ export class MovieComponent implements OnInit {
           this.video['url'] = this.sanitizer.bypassSecurityTrustResourceUrl('https://www.youtube.com/embed/' + this.video['key']);
         }
       });
+
+        this._moviesService.getStreamVideo(id).subscribe( res => {
+
+                if (res.results && res.results.length) {
+                    this.videostream = res.results[0];
+                    this.video['streambaseurl'] = this.sanitizer.bypassSecurityTrustResourceUrl('https://videospider.in/getvideo?' + this.video['streamkey']);
+                }
+        });
 
       this._moviesService.getRecomendMovies(id).subscribe(res => {
         this.similarMovies = res.results.slice(0, 8);

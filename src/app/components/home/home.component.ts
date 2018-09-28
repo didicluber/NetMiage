@@ -48,7 +48,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
   ngOnInit() {
 
     this.seo.generateTags({
-      title: 'Angular Movies and Series',
+      title: ' Movies and Series',
       description: 'Movie and Series Home Page',
       image: 'https://angular-movies-c91ba.firebaseapp.com/assets/background-main.jpg'
     });
